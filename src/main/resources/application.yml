@@ -1,0 +1,13 @@
+server:
+  port: 8081
+#logging:
+#  level:
+#    root: debug
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bill_manager
+          uri: http://localhost:8082
+          predicates:
+            - Path=/**
